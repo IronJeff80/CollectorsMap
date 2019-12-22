@@ -21,10 +21,10 @@ var Inventory = {
             _m.amount = 0;
     
           _m.canCollect = _m.amount < Inventory.stackSize && !_m.isCollected;
-          if ((_m.isCollected || _m.amount >= Inventory.stackSize) && (_m.day == day || _m.day.includes(day))) {
+          if ((_m.isCollected || _m.amount >= Inventory.stackSize) && _m.day == Cycles.data.cycles[currentCycle][_m.category]) {
             $('[data-marker=' + _m.text + ']').css('opacity', '.35');
             $(`[data-type=${_m.text}]`).addClass('disabled');
-          } else if((_m.day == day || _m.day.includes(day))) {
+          } else if(_m.day == Cycles.data.cycles[currentCycle][_m.category]) {
             $('[data-marker=' + _m.text + ']').css('opacity', '1');
             $(`[data-type=${_m.text}]`).removeClass('disabled');
           }
@@ -33,7 +33,7 @@ var Inventory = {
           $(`p.collectible[data-type=${name}] > small`).text(marker[0].amount);
     
           //If the category is disabled, no needs to update popup
-          if (Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == day)
+          if (Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.data.cycles[currentCycle][_m.category])
             Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
     
         });
