@@ -245,12 +245,12 @@
 		{"text": "wands_ace", "day": "6", "tool": "0", "x": "-99.28125", "y": "88.671875"},
 		{"text": "wands_two", "day": "6", "tool": "0", "x": "-33.4375", "y": "141.328125"},
 		{"text": "wands_three", "day": "6", "tool": "0", "x": "-58.8984375", "y": "149.5390625"},
-		{"text": "wands_four", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_four", "day": "6", "tool": "0", "x": "-85.328125", "y": "133.265625"},
 		{"text": "wands_five", "day": "6", "tool": "0", "x": "-42.8984375", "y": "81.8828125"},
 		{"text": "wands_six", "day": "6", "tool": "0", "x": "-42.10785", "y": "155.5625"},
 		{"text": "wands_seven", "day": "6", "tool": "0", "x": "-45.0234375", "y": "142.171875"},
 		{"text": "wands_eight", "day": "6", "tool": "0", "x": "", "y": ""},
-		{"text": "wands_nine", "day": "6", "tool": "0", "x": "", "y": ""},
+		{"text": "wands_nine", "day": "6", "tool": "0", "x": "-92.265625", "y": "135.90625"},
 		{"text": "wands_ten", "day": "6", "tool": "0", "x": "", "y": ""},
 		{"text": "wands_knight", "day": "6", "tool": "0", "x": "-81.67695", "y": "147.69375"},
 		{"text": "wands_page", "day": "6", "tool": "0", "x": "-89.4765625", "y": "80.5859375"},
@@ -418,7 +418,7 @@
 		{"text": "coin_gold_eagle", "day": "5", "tool": "2", "x": "-63.921875", "y": "152.3515625"},
 		{"text": "coin_liberty_quarter", "day": "5", "tool": "2", "x": "-41.53125", "y": "116.8203125"},
 		{"text": "coin_half_dime", "day": "5", "tool": "2", "x": "-101.671875", "y": "44.0234375"},
-		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"},		
+		{"text": "coin_penny", "day": "5", "tool": "2", "x": "-22.125", "y": "102.96875"},
 		{"text": "coin_gold_quarter", "day": "6", "tool": "2", "x": "-69.77245", "y": "82.52218"},
 		{"text": "coin_draped_bust_silver_dollar", "day": "6", "tool": "2", "x": "-120.3925", "y": "27.5631117"},
 		{"text": "coin_one_cent_token", "day": "6", "tool": "2", "x": "-83.466675", "y": "144.015625"},
@@ -491,7 +491,7 @@
 		{"text": "egg_egret", "day": "5", "tool": "0", "x": "-81.305", "y": "141.180335"},
 		{"text": "egg_duck", "day": "5", "tool": "0", "x": "-71.83672", "y": "73.25048"},
 		{"text": "egg_goose_1", "day": "5", "tool": "0", "x": "-80.73556", "y": "105.56307"}
-		
+
 	],
 	"antique_bottles": [
 		{"text": "bottle_tennesee_whiskey", "day": "1", "tool": "0", "x": "-48.3359375", "y": "114.8125", "video":"https://www.youtube.com/watch?v=qfP3HwcG9Mc&t=45s"},
@@ -622,7 +622,7 @@
 		{"text": "arrowhead_quartz", "day": "6", "tool": "2", "x": "-88.5703125", "y": "83.125"},
 		{"text": "arrowhead_flint", "day": "6", "tool": "2", "x": "-52.165197", "y": "87.7109375"},
 		{"text": "arrowhead_agate", "day": "6", "tool": "2", "x": "-71.171875", "y": "79.4453125"}
-		
+
 	],
 	"family_heirlooms": [
 		{"text": "heirlooms_jade_hairpin", "day": "1", "tool": "0", "x": "-83.5546875", "y": "96.8046875", "video":"https://www.youtube.com/watch?v=I8ykdDAooOI&t=45s"},
@@ -699,7 +699,7 @@
 		{"text": "heirlooms_ivory_comb", "day": "5", "tool": "0", "x": "-77.84365", "y": "150.984375"},
 		{"text": "heirlooms_horse_hair_brush", "day": "5", "tool": "0", "x": "-65.1796875", "y": "129.7421875"},
 		{"text": "heirlooms_boar_bristle_brush", "day": "5", "tool": "0", "x": "-75.9140625", "y": "146.3359375"},
-		{"text": "heirlooms_new_guinea_rosewood", "day": "5", "tool": "0", "x": "-82.2179", "y": "147.5765"},		
+		{"text": "heirlooms_new_guinea_rosewood", "day": "5", "tool": "0", "x": "-82.2179", "y": "147.5765"},
 		{"text": "heirlooms_jade_hairpin", "day": "6", "tool": "2", "x": "-50.65293", "y": "151.515625"},
 		{"text": "heirlooms_cherrywood_comb", "day": "6", "tool": "0", "x": "-51.5613146", "y": "106.25"},
 		{"text": "heirlooms_ebony_hairbrush", "day": "6", "tool": "0", "x": "-80.078125", "y": "148.6953125"},
@@ -1036,7 +1036,7 @@
 		{"text": "flower_wisteria_2", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-29.1328125", "y": "156.046875"},
 		{"text": "flower_wisteria_3", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-75.9765625", "y": "78.7421875"},
 		{"text": "flower_wisteria_4", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-51.140625", "y": "149.515625"},
-		{"text": "flower_wisteria_5", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-37.2265625", "y": "149.34375"},		
+		{"text": "flower_wisteria_5", "day": "5", "tool": "0", "subdata": "wisteria", "x": "-37.2265625", "y": "149.34375"},
 		{"text": "flower_texas_bluebonnet", "day": "6", "tool": "0", "subdata": "texas_bluebonnet", "x": "-117.5078125", "y": "31.2890625"},
 		{"text": "flower_texas_bluebonnet_2", "day": "6", "tool": "0", "subdata": "texas_bluebonnet", "x": "-93.5859375", "y": "96.703125"},
 		{"text": "flower_texas_bluebonnet_3", "day": "6", "tool": "0", "subdata": "texas_bluebonnet", "x": "-86.6796875", "y": "100.546875"},
@@ -1086,7 +1086,7 @@
 		{"text": "flower_wisteria_4", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-92.91", "y": "76.12"},
 		{"text": "flower_wisteria_5", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-86.69", "y": "70.78"},
 		{"text": "flower_wisteria_6", "day": "6", "tool": "0", "subdata": "wisteria", "x": "-76.6406", "y": "79.9063"},
-		
+
 		{"text": "flower_texas_bluebonnet", "day": "7", "tool": "0", "subdata": "texas_bluebonnet", "x": "-115.6328125", "y": "22.2734375"},
 		{"text": "flower_texas_bluebonnet_2", "day": "7", "tool": "0", "subdata": "texas_bluebonnet", "x": "-89.8359375", "y": "94.96875"},
 
@@ -1148,7 +1148,7 @@
 		{"text": "flower_bitterweed_3", "day": "8", "tool": "0", "subdata": "bitterweed", "x": "-56.390625", "y": "72.9609375"},
 		{"text": "flower_bitterweed_4", "day": "8", "tool": "0", "subdata": "bitterweed", "x": "-59.1484375", "y": "90.9375"},
 		{"text": "flower_bitterweed_5", "day": "8", "tool": "0", "subdata": "bitterweed", "x": "-56.25", "y": "80.9375"},
-		
+
 		{"text": "flower_agarita_1", "day": "8", "tool": "0", "subdata": "agarita", "x": "-104.484375", "y": "67.171875"},
 		{"text": "flower_wild_rhubarb", "day": "8", "tool": "0", "subdata": "wild_rhubarb", "x": "-106.0142", "y": "35.203125"},
 		{"text": "flower_wild_rhubarb_2", "day": "8", "tool": "0", "subdata": "wild_rhubarb", "x": "-102.71875", "y": "66.1640625"},
@@ -1158,9 +1158,9 @@
 		{"text": "flower_wild_rhubarb_6", "day": "8", "tool": "0", "subdata": "wild_rhubarb", "x": "-109.71875", "y": "54.6015625"},
 		{"text": "flower_wild_rhubarb_7", "day": "8", "tool": "0", "subdata": "wild_rhubarb", "x": "-105.78125", "y": "74.5625"},
 
-		{"text": "flower_cardinal", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-71.46196", "y": "146.5471"},		
-		{"text": "flower_cardinal_2", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-75.296875", "y": "148.515625"},		
-		{"text": "flower_cardinal_3", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-92.1796875", "y": "143.15625"},		
+		{"text": "flower_cardinal", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-71.46196", "y": "146.5471"},
+		{"text": "flower_cardinal_2", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-75.296875", "y": "148.515625"},
+		{"text": "flower_cardinal_3", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-92.1796875", "y": "143.15625"},
 		{"text": "flower_cardinal_4", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-78.609375", "y": "136.0234375"},
 		{"text": "flower_cardinal_5", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-68.0703125", "y": "144.9765625"},
 		{"text": "flower_cardinal_6", "day": "8", "tool": "0", "subdata": "cardinal", "x": "-94.8359375", "y": "142.015625"},
@@ -1180,14 +1180,14 @@
 		{"text": "flower_chocolate_daisy_4", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-72.9375", "y": "114.46875"},
 		{"text": "flower_chocolate_daisy_5", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-73.2890625", "y": "121"},
 		{"text": "flower_chocolate_daisy_6", "day": "8", "tool": "0", "subdata": "chocolate_daisy", "x": "-61.4296875", "y": "99.296875"},
-		
+
 		{"text": "flower_wisteria", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-71.4851", "y": "74.5865"},
 		{"text": "flower_wisteria_2", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-80.015625", "y": "80.9921875"},
 		{"text": "flower_wisteria_3", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-32.899", "y": "152.17231"},
 		{"text": "flower_wisteria_4", "day": "8", "tool": "0",  "subdata": "wisteria", "x": "-90.5078125", "y": "74.890625"},
 		{"text": "flower_wisteria_6", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-96", "y": "78.9140625"},
-		{"text": "flower_wisteria_7", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-43.8515625", "y": "146.546875"},	
-		
+		{"text": "flower_wisteria_7", "day": "8", "tool": "0", "subdata": "wisteria", "x": "-43.8515625", "y": "146.546875"},
+
 		{"text": "flower_texas_bluebonnet", "day": "9", "tool": "0", "subdata": "texas_bluebonnet", "x": "-94.1953125", "y": "97.6328125"},
 		{"text": "flower_texas_bluebonnet_2", "day": "9", "tool": "0", "subdata": "texas_bluebonnet", "x": "-93.609375", "y": "96.6953125"},
 		{"text": "flower_texas_bluebonnet_3", "day": "9", "tool": "0",  "subdata": "texas_bluebonnet", "x": "-93.484375", "y": "91.015625"},
@@ -1279,7 +1279,7 @@
 		{"text": "ring_aubrey_onyx", "day": "5", "tool": "2", "x": "-87.125", "y": "98.3671875"},
 		{"text": "ring_bosque_emerald", "day": "5", "tool": "2", "x": "-34.921875", "y": "118.7578125"},
 		{"text": "ring_sackville_diamond", "day": "5", "tool": "2", "x": "-47.6171875", "y": "100.6171875"},
-		{"text": "ring_thorburn_turquoise", "day": "5", "tool": "2", "x": "-42.9296875", "y": "147.4375"}		
+		{"text": "ring_thorburn_turquoise", "day": "5", "tool": "2", "x": "-42.9296875", "y": "147.4375"}
 	],
 	"lost_necklaces": [
 		{"text": "necklace_blakely_miniatue", "day": "1", "tool": "0", "x": "-50.515625", "y": "92.9296875", "video":"https://www.youtube.com/watch?v=mzkwrsCqNTc&t=45s"},
@@ -1372,7 +1372,7 @@
 		{"text": "earring_beauchene_ruby", "day": "4", "tool": "2", "x": "-67.6015625", "y": "135.734375"},
 		{"text": "earring_endicott_diamond", "day": "4", "tool": "2", "x": "-102.6385", "y": "71.265625"},
 		{"text": "earring_josephine_pearl", "day": "4", "tool": "2", "x": "-82.09375", "y": "95.671875"},
-		{"text": "earring_emmeline_coral", "day": "4", "tool": "2", "x": "-113.06363", "y": "20.30781"},		
+		{"text": "earring_emmeline_coral", "day": "4", "tool": "2", "x": "-113.06363", "y": "20.30781"},
 		{"text": "earring_ursula_citrine", "day": "5", "tool": "2", "x": "-68.9453125", "y": "70.65625"},
 		{"text": "earring_royal_victoria", "day": "5", "tool": "2", "x": "-76.484375", "y": "94.828125"},
 		{"text": "earring_calumet_turquoise", "day": "5", "tool": "2", "x": "-110.9296875", "y": "56.390625"},
