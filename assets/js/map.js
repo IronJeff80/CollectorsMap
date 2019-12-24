@@ -3,7 +3,7 @@
  */
 
 var Layers = {
-  itemMarkersLayer: Settings.markerCluster ? L.markerClusterGroup({maxClusterRadius: 8}) : new L.LayerGroup(),
+  itemMarkersLayer: Settings.markerCluster ? L.markerClusterGroup({ maxClusterRadius: 8 }) : new L.LayerGroup(),
   miscLayer: new L.LayerGroup(),
   encountersLayer: new L.LayerGroup()
 };
@@ -75,9 +75,12 @@ var MapBase = {
   },
 
   setMarkers: function (data) {
-    $.each(data, function (_category, _markers) {
-      $.each(_markers, function (key, marker) {
-        markers.push(new Marker(marker.text, marker.x, marker.y, marker.tool, marker.day, _category, marker.subdata, marker.video, true));
+    $.each(data, function (_category, _cycles) {
+      $.each(_cycles, function (day, _markers) {
+        $.each(_markers, function(key, marker){
+          markers.push(new Marker(marker.text, marker.lat, marker.lng, marker.tool, day, _category, marker.subdata, marker.video, true));
+ 
+        });
       });
     });
     uniqueSearchMarkers = markers;
@@ -291,7 +294,7 @@ var MapBase = {
     var tempMarker = L.marker([marker.lat, marker.lng], {
       opacity: marker.canCollect ? 1 : .35,
       icon: new L.Icon.DataMarkup({
-        iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? 'lightgray' : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)) + '.png',
+        iconUrl: './assets/images/icons/' + marker.category + '_' + (marker.category == 'random' ? `lightgray_${marker.tool}` : MapBase.getIconColor(isWeekly ? 'weekly' : 'day_' + marker.day)) + '.png',
         iconSize: [35, 45],
         iconAnchor: [17, 42],
         popupAnchor: [1, -32],
