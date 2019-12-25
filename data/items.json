@@ -1203,7 +1203,8 @@
 			{"text": "flower_wisteria_3","tool": "0","subdata": "wisteria","lat": "-53.6644","lng": "149.25"},
 			{"text": "flower_wisteria_4","tool": "0","subdata": "wisteria","lat": "-92.91","lng": "76.12"},
 			{"text": "flower_wisteria_5","tool": "0","subdata": "wisteria","lat": "-86.69","lng": "70.78"},
-			{"text": "flower_wisteria_6","tool": "0","subdata": "wisteria","lat": "-76.6406","lng": "79.9063"}
+			{"text": "flower_wisteria_6","tool": "0","subdata": "wisteria","lat": "-76.6406","lng": "79.9063"},
+			{"text": "flower_wisteria_7","tool": "0","subdata": "wisteria","lat": "-81.0625","lng": "83.65625"}
 		],
 		"7": [
 			{"text": "flower_texas_bluebonnet","tool": "0","subdata": "texas_bluebonnet","lat": "-115.6328125","lng": "22.2734375"},
