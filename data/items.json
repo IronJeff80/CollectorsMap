@@ -1328,7 +1328,7 @@
 			{"text": "flower_blood_flower_1","tool": "0","subdata": "blood_flower","lat": "-81.3671875","lng": "141.734375"},
 			{"text": "flower_blood_flower_2","tool": "0","subdata": "blood_flower","lat": "-73.1791435","lng": "147.778485"},
 			{"text": "flower_blood_flower_3","tool": "0","subdata": "blood_flower","lat": "-67.6178","lng": "147.0911"},
-			
+
 			{"text": "flower_chocolate_daisy","tool": "0","subdata": "chocolate_daisy","lat": "-76.671875","lng": "93.28125"},
 			{"text": "flower_chocolate_daisy_2","tool": "0","subdata": "chocolate_daisy","lat": "-82.66","lng": "83.80"},
 			{"text": "flower_chocolate_daisy_3","tool": "0","subdata": "chocolate_daisy","lat": "-91.94","lng": "124.67"},
@@ -1342,8 +1342,8 @@
 			{"text": "flower_wisteria_2","tool": "0","subdata": "wisteria","lat": "-80.015625","lng": "80.9921875"},
 			{"text": "flower_wisteria_3","tool": "0","subdata": "wisteria","lat": "-32.899","lng": "152.17231"},
 			{"text": "flower_wisteria_4","tool": "0","subdata": "wisteria","lat": "-90.5078125","lng": "74.890625"},
-			{"text": "flower_wisteria_6","tool": "0","subdata": "wisteria","lat": "-96","lng": "78.9140625"},
-			{"text": "flower_wisteria_7","tool": "0","subdata": "wisteria","lat": "-43.8515625","lng": "146.546875"}
+			{"text": "flower_wisteria_5","tool": "0","subdata": "wisteria","lat": "-96","lng": "78.9140625"},
+			{"text": "flower_wisteria_6","tool": "0","subdata": "wisteria","lat": "-43.8515625","lng": "146.546875"}
 		],
 		"9": [
 			{"text": "flower_texas_bluebonnet","tool": "0","subdata": "texas_bluebonnet","lat": "-94.1953125","lng": "97.6328125"},
