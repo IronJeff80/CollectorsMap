@@ -45,10 +45,9 @@ var nazarCurrentDate;
 
 var fastTravelData;
 
-var weeklySet = 'festive_feast_set';
 var weeklySetData = [];
 var date;
-var nocache = 173;
+var nocache = 176;
 
 var wikiLanguage = [];
 
@@ -558,7 +557,6 @@ $('#marker-cluster').on("change", function () {
   $.cookie('marker-cluster', inputValue);
   Settings.markerCluster = inputValue == '1';
   MapBase.map.removeLayer(Layers.itemMarkersLayer);
-  Layers.itemMarkersLayer = Settings.markerCluster ? L.markerClusterGroup({maxClusterRadius: 8}) : new L.LayerGroup()
   MapBase.addMarkers();
 });
 //Inventory triggers
