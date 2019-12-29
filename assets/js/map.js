@@ -190,7 +190,7 @@ var MapBase = {
 
         if (itemName == category && marker.subdata == category) {
           if (!isDisabled) {
-            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
+            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             }
@@ -199,7 +199,7 @@ var MapBase = {
             marker.canCollect = false;
           }
           else {
-            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
+            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             }
@@ -210,13 +210,13 @@ var MapBase = {
         }
         else {
           if (marker.canCollect) {
-            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
+            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
               marker.isCollected = true;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, 1);
             }
             marker.canCollect = false;
           } else {
-            if (marker.day == Cycles.data.cycles[currentCycle][marker.category]) {
+            if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category]) {
               marker.isCollected = false;
               Inventory.changeMarkerAmount(marker.subdata || marker.text, -1);
             }
@@ -285,7 +285,7 @@ var MapBase = {
   },
 
   addMarkerOnMap: function (marker) {
-    if (marker.day != Cycles.data.cycles[currentCycle][marker.category] && !showAllMarkers) return;
+    if (marker.day != Cycles.data.cycles[Cycles.data.current][marker.category] && !showAllMarkers) return;
 
     if (!uniqueSearchMarkers.includes(marker))
       return;
@@ -336,7 +336,7 @@ var MapBase = {
     });
     var temp = "";
     $.each(markers, function (key, marker) {
-      if (marker.day == Cycles.data.cycles[currentCycle][marker.category] && (marker.amount > 0 || marker.isCollected))
+      if (marker.day == Cycles.data.cycles[Cycles.data.current][marker.category] && (marker.amount > 0 || marker.isCollected))
         temp += `${marker.text}:${marker.isCollected ? '1' : '0'}:${marker.amount};`;
     });
 
@@ -363,6 +363,37 @@ var MapBase = {
       }
       else {
         MapBase.gameToMap(value[index].x, value[index].y, key);
+      }
+    });
+
+
+    flowers:
+
+     $.each(flowers[0], function(key, value){ 
+      var index = 5;      
+      if(value.length == 18) {
+        MapBase.gameToMap(value[(index*3)].x, value[(index*3)].y, key);
+        MapBase.gameToMap(value[(index*3)+1].x, value[(index*3)+1].y, key);
+        MapBase.gameToMap(value[(index*3)+2].x, value[(index*3)+2].y, key);
+      }
+      if(value.length == 36) {
+        MapBase.gameToMap(value[(index*6)].x, value[(index*6)].y, key);
+        MapBase.gameToMap(value[(index*6)+1].x, value[(index*6)+1].y, key);
+        MapBase.gameToMap(value[(index*6)+2].x, value[(index*6)+2].y, key);
+        MapBase.gameToMap(value[(index*6)+3].x, value[(index*6)+3].y, key);
+        MapBase.gameToMap(value[(index*6)+4].x, value[(index*6)+4].y, key);
+        MapBase.gameToMap(value[(index*6)+5].x, value[(index*6)+5].y, key);
+      }
+      if(value.length == 54) {
+        MapBase.gameToMap(value[(index*9)].x, value[(index*9)].y, key);
+        MapBase.gameToMap(value[(index*9)+1].x, value[(index*9)+1].y, key);
+        MapBase.gameToMap(value[(index*9)+2].x, value[(index*9)+1].y, key);
+        MapBase.gameToMap(value[(index*9)+3].x, value[(index*9)+3].y, key);
+        MapBase.gameToMap(value[(index*9)+4].x, value[(index*9)+4].y, key);
+        MapBase.gameToMap(value[(index*9)+5].x, value[(index*9)+5].y, key);
+        MapBase.gameToMap(value[(index*9)+6].x, value[(index*9)+6].y, key);
+        MapBase.gameToMap(value[(index*9)+7].x, value[(index*9)+7].y, key);
+        MapBase.gameToMap(value[(index*9)+8].x, value[(index*9)+8].y, key);
       }
     });
     */
