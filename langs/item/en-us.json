@@ -214,7 +214,7 @@
 	{"key": "wands_two_1.desc", "value": "On a bench on the patio of the house."},
 	{"key": "wands_two_2.desc", "value": "On a sidetable on the front porch."},
 	{"key": "wands_two_3.desc", "value": "On the side of the pier."},
-	{"key": "wands_two_4.desc", "value": "On a box leftside inside the barn."},
+	{"key": "wands_two_4.desc", "value": "Right side inside the barn, on top of a barrel."},
 
 	{"key": "wands_three.name", "value": "Three of Wands"},
 	{"key": "wands_three_1.desc", "value": "Outside on the left side of the chimney."},
@@ -245,7 +245,7 @@
 	{"key": "wands_eight_1.desc", "value": "On shelf against the south wall of saloon."},
 	{"key": "wands_eight_2.desc", "value": "On a barrel on the top floor of the barn."},
 	{"key": "wands_eight_3.desc", "value": ""},
-	{"key": "wands_eight_4.desc", "value": "On some plans by the station"},
+	{"key": "wands_eight_4.desc", "value": "On some planks by the station"},
 
 	{"key": "wands_nine.name", "value": "Nine of Wands"},
 	{"key": "wands_nine_1.desc", "value": "Get on shorter roof. Card is on window sill."},
