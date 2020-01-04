@@ -1,0 +1,26 @@
+{
+	"cave_01": {
+		"img": "./assets/overlays/cave_01.png",
+		"bounds": [[-53.2978125, 68.7596875], [-52.1478125, 69.9096875]]
+	},
+	"cave_02": {
+		"img": "./assets/overlays/cave_02.png",
+		"bounds": [[-45.6525, 88.72625], [-44.5025, 89.87625]]
+	},
+	"cave_03": {
+		"img": "./assets/overlays/cave_03.png",
+		"bounds": [[-47.98625, 145.655], [-44.98625, 148.655]]
+	},
+	"cave_04": {
+		"img": "./assets/overlays/cave_04.png",
+		"bounds": [[-33.35, 124.4], [-33.95, 123.8]]
+	},
+	"cave_05": {
+		"img": "./assets/overlays/cave_05.png",
+		"bounds": [[-42.155, 146.1525], [-40.155, 148.1525]]
+	},
+	"cave_06": {
+		"img": "./assets/overlays/cave_06.png",
+		"bounds": [[-52.345, 87.57], [-51.985, 87.93]]
+	}
+}

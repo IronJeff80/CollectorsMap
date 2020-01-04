@@ -48,6 +48,30 @@ h4 {
 p {
     margin: 0!important;
 }
+
+#main-header {
+    display: flex;
+    margin: 0 10px;
+}
+
+#main-header::after {
+    clear: both;
+}
+
+#main-header-center {
+    flex-grow: 1;
+    height: 75px;
+    line-height: 67px;
+    background-image: url(../../assets/images/header_bg_center.png);
+    background-repeat: repeat-x;
+    background-size: auto 75px;
+}
+
+#main-header-left, #main-header-right {
+    user-select: none;
+    height: 75px;
+}
+
 .map-alert {
     background: darkred;
     color: #fff;
@@ -59,6 +83,7 @@ p {
     text-align: center;
     display: none;
 }
+
 .map-alert .close-button {
     position: absolute;
     top: 0;
@@ -69,6 +94,7 @@ p {
     padding: 0;
     background-color: transparent;
 }
+
 #map {
     background: #d2b790;
     width: 100%;
@@ -143,28 +169,38 @@ p {
     display: none;
 }
 
+.white-line-divider {
+    margin: 15px 0 2px 0;
+    height: 10px;
+    background-image: url(../../assets/images/header_border_divider.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
+}
+
 .remove-button {
     text-align: center;
     font-size: 14px;
     cursor: pointer;
-    user-select: none;    
+    user-select: none;
     margin-top: 8px;
 }
 
 .marker-popup-buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
 }
 
 .marker-popup-buttons small {
     font-size: 15px;
+    line-height: 33px;
 }
 
 .hide-show-container, .custom-routes-container {
     display: flex;
     justify-content: space-around;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid #fff;
+    border-top: 1px solid #B0B0B0;
+    border-bottom: 1px solid #B0B0B0;
     padding: 10px 0;
     margin: 15px 0;
 }
@@ -198,6 +234,19 @@ p {
     margin: 5px 0;
 }
 
+.input-container-noflex {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.wide-select-menu {
+    width: 150px;
+}
+
+.narrow-select-menu {
+    width: 75px;
+}
+
 .input-day {
     background: #383838;
     border: none;
@@ -205,6 +254,11 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     height: 100%;
+}
+
+.input-day:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 .issues-container a {
@@ -248,6 +302,7 @@ p {
     color: #eee;
     z-index: 999;
     padding-top: 10px;
+    scrollbar-width: thin;
 }
 
 .menu-opened {
@@ -261,11 +316,13 @@ p {
 .side-menu .collectables-counter {
     text-align: center;
 }
+
 .side-menu .cycle-data {
     text-align: center;
     font-size: 17px;
     padding-bottom: 3px;
 }
+
 .side-menu .menu-option {
     display: flex;
     align-items: start;
@@ -275,16 +332,21 @@ p {
     line-height: 36px;
 }
 
-.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible:hover {
+.side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
     background: rgba(255, 255, 255, 0.1);
 }
 
 .side-menu .disabled {
-    color: #6a6a6a;
+    opacity: .5;
     text-decoration: line-through;
 }
+
+.side-menu .weekly-item {
+    color: greenyellow;
+}
+
 .side-menu .not-found {
-    color: #f95050;
+    color: #f95050 !important;
 }
 
 .side-menu .menu-option .icon {
@@ -315,18 +377,30 @@ p {
     text-align: center;
     border-top: 1px white solid;
     border-bottom: 1px white solid;
-    padding: 5px 0;    
+    padding: 5px 0;
     display: flex;
     justify-content: space-around;
 }
+
 .side-menu .menu-hidden .collection-sell {
     cursor: pointer;
     user-select: none;
 }
-.side-menu .menu-hidden .collectible {
-    padding: 5px 25px;
+
+.side-menu .menu-hidden .collectible-wrapper {
+    padding: 5px 20px;
     cursor: pointer;
     user-select: none;
+}
+
+.side-menu .menu-hidden .collectible-icon {
+    float: left;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.side-menu .menu-hidden .collectible {
+    padding: 5px 0;
     display: flex;
     justify-content: space-between;
     font-size: 15px;
@@ -336,13 +410,14 @@ p {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 200px;
+    width: 220px;
     margin: 0 calc(50% - 100px) 20px;
     z-index: 990;
-    background-color: #FFFAF0;
+    color: #fff;
+    background-color: #333333;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 13px 2px;
+    padding: 14px 8px;
     border-radius: 3px;
     display: none;
 }
@@ -402,6 +477,7 @@ p {
     height: 100%;
     padding: 10px;
 }
+
 .menu-option.clickable input {
     margin: auto 10px auto auto;
     max-width: 50px;
@@ -410,8 +486,12 @@ p {
     padding: 0 0 0 8px;
 }
 
+#debug-marker-lat, #debug-marker-lng {
+    width: calc(50% - 4px);
+}
 
 /* Fix buttons showing on top of sidebar on mobile menu */
+
 .leaflet-top, .leaflet-bottom {
     z-index: 998;
 }

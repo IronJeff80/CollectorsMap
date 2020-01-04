@@ -32,15 +32,14 @@ var Inventory = {
       }
 
       $(`small[data-item=${name}]`).text(marker[0].amount);
-      $(`p.collectible[data-type=${name}] > small`).text(marker[0].amount);
+      $(`[data-type=${name}] small`).text(marker[0].amount);
 
       //If the category is disabled, no needs to update popup
       if (Layers.itemMarkersLayer.getLayerById(_m.text) != null && _m.day == Cycles.data.cycles[Cycles.data.current][_m.category])
         Layers.itemMarkersLayer.getLayerById(_m.text)._popup.setContent(MapBase.updateMarkerContent(_m));
 
     });
-    //Layers.itemMarkersLayer.removeLayer(Layers.itemMarkersLayer.getLayerById(marker.text));
-    //MapBase.addMarkerOnMap(marker);
+
     if ($("#routes").val() == 1)
       Routes.drawLines();
     MapBase.save();
