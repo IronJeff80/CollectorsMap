@@ -1,5 +1,5 @@
 var Inventory = {
-  isEnabled: $.cookie('inventory-enabled') ? $.cookie('inventory-enabled') == 'true' : typeof $.cookie('inventory-enabled') === 'undefined' ? true : false,
+  isEnabled: $.cookie('inventory-enabled') ? $.cookie('inventory-enabled') == 'true' : typeof $.cookie('inventory-enabled') === 'undefined' ? false : true,
   stackSize: parseInt($.cookie('inventory-stack')) ? parseInt($.cookie('inventory-stack')) : 10,
 
   init: function () {
@@ -9,7 +9,7 @@ var Inventory = {
 
   changeMarkerAmount: function (name, amount) {
 
-    var marker = markers.filter(_m => {
+    var marker = MapBase.markers.filter(_m => {
       return (_m.text == name || _m.subdata == name);
     });
 

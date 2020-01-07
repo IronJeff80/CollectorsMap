@@ -15,9 +15,12 @@
   <script src="assets/js/jquery-3.4.1.min.js"></script>
   <script src="assets/js/jquery.cookie.js"></script>
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?nocache=186" />
+  <link rel="stylesheet" href="assets/css/styles.css?nocache=189" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+  <script>
+    var nocache = 189;
+  </script>
 </head>
 
 <body>
@@ -26,19 +29,23 @@
       <img id="main-header-left" src="./assets/images/header_bg_left.png" alt="">
       <div id="main-header-center">
         <span data-text="menu.collectables">Collectables</span>
-        <span class="help-button">
-          <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
-          target="_blank" class="wiki-page">[Wiki]</a>
-        </span>
+        <h3 id="sub-header">
+          <span class="cycle-data">Loading</span> - <span class="collectables-counter"
+            data-text="menu.collectables_counter">Collected -- of --</span>
+        </h3>
       </div>
       <img id="main-header-right" src="./assets/images/header_bg_right.png" alt="">
     </h2>
-    <div class="collectables-counter" data-text="menu.collectables_counter">Collected -- of --</div>
+    <div class="settings-container">
+      <div class="input-container-noflex">
+        <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;"
+          autocomplete="off">
+      </div>
+    </div>
     <div class="hide-show-container">
       <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Menu.hideAll()">Hide all</a>
       <a data-text="menu.show_all" href="javascript:void(0);" onclick="Menu.showAll()">Show all</a>
     </div>
-    <div class="cycle-data">December 28</div>
     <div>
       <div class="menu-option clickable" data-type="american_flowers">
         <img class="icon" src="./assets/images/icons/american-flowers.png" />
@@ -287,18 +294,19 @@
         <div class="open-submenu" style="margin: auto 0 auto auto;"></div>
       </div>
       <div class="menu-hidden" data-type="treasure">
+        <div class="collection-value">
+          <a data-text="menu.hide_all" href="javascript:void(0);" onclick="Treasures.showHideAll(true)">Hide all</a>
+          <a data-text="menu.show_all" href="javascript:void(0);" onclick="Treasures.showHideAll(false)">Show all</a>
+        </div>
       </div>
     </div>
 
-    <div class="white-line-divider"></div>
-    <div class="search-container">
-      <h2 data-text="menu.search">Search</h2>
-      <input class="input-search" type="text" id="search" placeholder="Search items. Separated by ;" autocomplete="off">
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.settings">Settings</h2>
+      <span class="header-border"></span>
     </div>
-
-    <div class="white-line-divider"></div>
     <div class="settings-container">
-      <h2 data-text="menu.settings">Settings</h2>
       <div class="input-container">
         <label for="tools" data-text="menu.tool_type">Tool type</label>
         <select class="input-day wide-select-menu" id="tools">
@@ -327,25 +335,11 @@
           <option value="zh-t">繁体中文</option>
         </select>
       </div>
-      <!--div class="input-container">
-        <label for="routes" data-text="menu.enable_route">Enable route</label>
-        <select class="input-day" id="routes">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-        </select>
-      </div-->
       <div class="input-container">
         <label for="marker-cluster" data-text="menu.marker_cluster">Markers cluster</label>
         <select class="input-day narrow-select-menu" id="marker-cluster">
           <option value="1" data-text="menu.yes">Yes</option>
           <option value="0" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="auto-refresh" data-text="menu.auto_refresh">Auto-refresh</label>
-        <select class="input-day narrow-select-menu" id="auto-refresh">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
         </select>
       </div>
       <div class="input-container">
@@ -357,9 +351,86 @@
         </select>
       </div>
     </div>
-    <div class="white-line-divider"></div>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title">
+        <span data-text="menu.route_generator">Route generator</span>
+        <span class="help-button">[Beta]</span>
+      </h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="custom-routes-container">
+      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath()">Generate route</a>
+      <a data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</a>
+    </div>
     <div class="settings-container">
-      <h2 data-text="menu.inventory">Inventory</h2>
+      <div class="input-container">
+        <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route
+          on every visit</label>
+        <select class="input-day narrow-select-menu" id="generate-route-generate-on-visit">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected
+          items</label>
+        <select class="input-day narrow-select-menu" id="generate-route-ignore-collected">
+          <option value="true" data-text="menu.yes">Yes</option>
+          <option value="false" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
+        <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200"
+          value="25">
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
+        <select class="input-day wide-select-menu" id="generate-route-start">
+          <option value="SW" data-text="menu.generate_route_start.sw">Southwest (↙)</option>
+          <option value="NE" data-text="menu.generate_route_start.ne">Northeast (↗)</option>
+          <option value="N" data-text="menu.generate_route_start.n">North (↑)</option>
+          <option value="SE" data-text="menu.generate_route_start.se">Southeast (↘)</option>
+          <option value="Custom" data-text="menu.generate_route_start.custom">Custom</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
+        <input id="generate-route-start-lat" class="input-day wide-select-menu" type="number" step="any"
+          value="-119.9063">
+      </div>
+      <div class="input-container">
+        <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
+        <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
+      </div>
+    </div>
+
+    <h2 data-text="menu.custom_routes">Custom routes</h2>
+    <div class="custom-routes-container">
+      <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
+        route</a>
+      <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
+        route</a>
+    </div>
+    <div class="routes-container">
+      <div class="input-container">
+        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
+        <select class="input-day narrow-select-menu" id="custom-routes">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+          <option value="clear" data-text="menu.clear">Clear</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.inventory">Inventory</h2>
+      <span class="header-border"></span>
+    </div>
+    <div class="settings-container">
       <div class="input-container">
         <label for="enable-inventory" data-text="menu.enable_inventory">Enable inventory</label>
         <select class="input-day narrow-select-menu" id="enable-inventory">
@@ -379,72 +450,12 @@
         <input id="inventory-stack" class="input-day narrow-select-menu" type="number" min="1" max="10" value="10">
       </div>
     </div>
-    <div class="white-line-divider"></div>
-    <h2 data-text="menu.custom_routes">Custom routes</h2>
-    <div class="custom-routes-container">
-      <a data-text="menu.import_route" href="javascript:void(0);" onclick="Routes.importCustomRoute()">Import
-        route</a>
-      <a data-text="menu.export_route" href="javascript:void(0);" onclick="Routes.exportCustomRoute()">Export
-        route</a>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title">Debug marker</h2>
+      <span class="header-border"></span>
     </div>
-    <div class="routes-container">
-      <div class="input-container">
-        <label for="custom-routes" data-text="menu.enable_custom_route">Enable custom route</label>
-        <select class="input-day narrow-select-menu" id="custom-routes">
-          <option value="1" data-text="menu.yes">Yes</option>
-          <option value="0" data-text="menu.no" selected>No</option>
-          <option value="clear" data-text="menu.clear">Clear</option>
-        </select>
-      </div>
-    </div>
-    <h2>
-      <span data-text="menu.route_generator">Route generator</span>
-      <span class="help-button">[Beta]</span>
-    </h2>
-    <div class="custom-routes-container">
-      <a data-text="menu.generate_route" href="javascript:void(0);" onclick="Routes.generatePath()">Generate route</a>
-      <a data-text="menu.generate_route_clear" href="javascript:void(0);" onclick="Routes.clearPath()">Clear route</a>
-    </div>
-    <div class="settings-container">
-      <div class="input-container">
-        <label for="generate-route-generate-on-visit" data-text="menu.generate_route_generate_on_visit">Generate route on every visit</label>
-        <select class="input-day narrow-select-menu" id="generate-route-generate-on-visit">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="generate-route-ignore-collected" data-text="menu.generate_route_ignore_collected">Ignore collected items</label>
-        <select class="input-day narrow-select-menu" id="generate-route-ignore-collected">
-          <option value="true" data-text="menu.yes">Yes</option>
-          <option value="false" data-text="menu.no" selected>No</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="generate-route-distance" data-text="menu.generate_route_distance">Maximum line length</label>
-        <input id="generate-route-distance" class="input-day narrow-select-menu" type="number" min="1" max="200" value="25">
-      </div>
-      <div class="input-container">
-        <label for="generate-route-start" data-text="menu.generate_route_start">Route starts at</label>
-        <select class="input-day wide-select-menu" id="generate-route-start">
-          <option value="SW" data-text="menu.generate_route_start.sw">Southwest (↙)</option>
-          <option value="NE" data-text="menu.generate_route_start.ne">Northeast (↗)</option>
-          <option value="N" data-text="menu.generate_route_start.n">North (↑)</option>
-          <option value="SE" data-text="menu.generate_route_start.se">Southeast (↘)</option>
-          <option value="Custom" data-text="menu.generate_route_start.custom">Custom</option>
-        </select>
-      </div>
-      <div class="input-container">
-        <label for="generate-route-start-lat" data-text="menu.generate_route_start_lat">Route start lat.</label>
-        <input id="generate-route-start-lat" class="input-day wide-select-menu" type="number" step="any" value="-119.9063">
-      </div>
-      <div class="input-container">
-        <label for="generate-route-start-lng" data-text="menu.generate_route_start_lng">Route start long.</label>
-        <input id="generate-route-start-lng" class="input-day wide-select-menu" type="number" step="any" value="8.0313">
-      </div>
-    </div>
-    <div class="white-line-divider"></div>
-    <h2>Debug marker</h2>
     <div class="routes-container">
       <div class="input-container">
         <label for="show-all-markers">Show all markers</label>
@@ -454,35 +465,55 @@
         </select>
       </div>
       <div class="input-container">
-          <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
-          <select class="input-day narrow-select-menu" id="show-coordinates">
-            <option value="1" data-text="menu.yes">Yes</option>
-            <option value="0" data-text="menu.no" selected>No</option>
-          </select>
-        </div>
+        <label for="show-coordinates" data-text="menu.show_coords">Show coordinates on click</label>
+        <select class="input-day narrow-select-menu" id="show-coordinates">
+          <option value="1" data-text="menu.yes">Yes</option>
+          <option value="0" data-text="menu.no" selected>No</option>
+        </select>
+      </div>
       <div class="input-container-noflex">
         <input id="debug-marker-lat" placeholder="Lat." type="text" name="debug-marker-lat" class="input-day" value="">
         <input id="debug-marker-lng" placeholder="Long." type="text" name="debug-marker-lng" class="input-day" value="">
       </div>
       <div class="input-container-noflex">
-        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search" autocomplete="off">
+        <input id="debug-marker-name" placeholder="Enter Debug Marker Name" type="text" class="input-search"
+          autocomplete="off">
       </div>
       <div class="input-container-noflex">
-        <button id="debug-place-marker" type="button" class="btn btn-default narrow-select-menu" onclick="MapBase.submitDebugForm()">Place</button>
+        <button id="import-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.importCustomMarkers()">Import [Beta]</button>
+        <button id="export-custom-markers" type="button" class="btn btn-default narrow-select-menu"
+          onclick="MapBase.exportCustomMarkers()">Export [Beta]</button>
+        <button id="debug-place-marker" type="button" class="btn btn-default btn-special narrow-select-menu"
+          onclick="MapBase.submitDebugForm()">Place</button>
       </div>
     </div>
-    <div class="white-line-divider"></div>
+
+    <div class="header">
+      <span class="header-border"></span>
+      <h2 class="header-title" data-text="menu.issues">Issues</h2>
+      <span class="header-border"></span>
+    </div>
     <div class="issues-container">
-      <h2 data-text="menu.issues">Issues</h2>
       <a data-text="menu.report_issues" href="https://github.com/jeanropke/RDR2CollectorsMap/issues"
         target="_blank">Report issues here!</a>
     </div>
+
     <div class="hide-show-container">
       <a href="https://jeanropke.github.io/RDOMap/" target="_blank" data-text="menu.rdo_map">RDO Map</a>
     </div>
+
     <div class="issues-container">
       <a href="./index-legacy.html" data-text="menu.return_legacy">Return to legacy version!</a>
-    </div> <br>
+    </div>
+    <div class="hide-show-container">
+      <span class="help-button">
+        <a href="https://github.com/jeanropke/RDR2CollectorsMap/wiki/RDO-Collectors-Map-User-Guide-(English)"
+          target="_blank" class="wiki-page">About this map: [Wiki]</a>
+      </span>
+    </div>
+
+    <br>
     <div class="donate-container">
       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
         <input type="hidden" name="cmd" value="_donations" />
@@ -541,23 +572,23 @@
     <p></p><button id="lat-lng-container-close-button">×</button>
   </div>
 
-  <div class="map-alert">
-    Rockstar updated the Collectors Role. Some items are missing.
+  <!--div class="map-alert">
+    Cycles are setted manually after Moonshiners update. Usually takes 20 minutes to update.
     <button class="close-button">×</button>
-  </div>
+  </div-->
 
 
-  <script src="assets/js/settings.js?nocache=186"></script>
-  <script src="assets/js/cycles.js?nocache=186"></script>
-  <script src="assets/js/marker.js?nocache=186"></script>
-  <script src="assets/js/inventory.js?nocache=186"></script>
-  <script src="assets/js/treasures.js?nocache=186"></script>
-  <script src="assets/js/encounters.js?nocache=186"></script>
-  <script src="assets/js/map.js?nocache=186"></script>
-  <script src="assets/js/language.js?nocache=186"></script>
-  <script src="assets/js/menu.js?nocache=186"></script>
-  <script src="assets/js/routes.js?nocache=186"></script>
-  <script src="assets/js/scripts.js?nocache=186"></script>
+  <script src="assets/js/settings.js?nocache=189"></script>
+  <script src="assets/js/cycles.js?nocache=189"></script>
+  <script src="assets/js/marker.js?nocache=189"></script>
+  <script src="assets/js/inventory.js?nocache=189"></script>
+  <script src="assets/js/treasures.js?nocache=189"></script>
+  <script src="assets/js/encounters.js?nocache=189"></script>
+  <script src="assets/js/map.js?nocache=189"></script>
+  <script src="assets/js/language.js?nocache=189"></script>
+  <script src="assets/js/menu.js?nocache=189"></script>
+  <script src="assets/js/routes.js?nocache=189"></script>
+  <script src="assets/js/scripts.js?nocache=189"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39999584-4"></script>
   <script>

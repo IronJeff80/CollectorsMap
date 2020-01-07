@@ -51,7 +51,7 @@ p {
 
 #main-header {
     display: flex;
-    margin: 0 10px;
+    margin: 0 10px 10px 10px;
 }
 
 #main-header::after {
@@ -61,15 +61,59 @@ p {
 #main-header-center {
     flex-grow: 1;
     height: 75px;
-    line-height: 67px;
     background-image: url(../../assets/images/header_bg_center.png);
     background-repeat: repeat-x;
     background-size: auto 75px;
+    padding: 6px 0;
 }
 
 #main-header-left, #main-header-right {
     user-select: none;
     height: 75px;
+}
+
+#sub-header {
+    font-size: 14px;
+    color: #cacaca;
+}
+
+.header {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    position: relative;
+    margin: 12px 0;
+}
+
+.header-title {
+    -webkit-box-flex: 0;
+    flex: 0 1 auto;
+    line-height: normal;
+    margin: 0 12px;
+    text-align: center;
+}
+
+.header-border {
+    -webkit-box-flex: 1;
+    flex: 1 0 auto;
+    min-width: 40px;
+    position: relative;
+}
+
+.header-border:after {
+    background-image: url(../../assets/images/header_border_divider.png);
+    background-repeat: repeat-x;
+    background-size: auto 3px;
+    top: 18px;
+    content: " ";
+    height: 3px;
+    position: absolute;
+    width: 100%;
+    left: 0;
 }
 
 .map-alert {
@@ -185,6 +229,11 @@ p {
     margin-top: 8px;
 }
 
+.marker-popup-links {
+    text-align: center;
+    margin: 6px 0 !important;
+}
+
 .marker-popup-buttons {
     display: flex;
     justify-content: space-between;
@@ -226,6 +275,7 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     width: 100%;
+    border-radius: 3px;
 }
 
 .input-container {
@@ -247,6 +297,17 @@ p {
     width: 75px;
 }
 
+.btn-default {
+    background-color: #383838;
+    width: 32%;
+    font-weight: 500;
+    color: #fff;
+}
+
+.btn-special {
+    background-color: #747474;
+}
+
 .input-day {
     background: #383838;
     border: none;
@@ -254,6 +315,7 @@ p {
     color: #f0f0f0;
     font-size: 14px;
     height: 100%;
+    border-radius: 3px;
 }
 
 .input-day:disabled {
@@ -313,16 +375,6 @@ p {
     transition: all 200ms ease-out;
 }
 
-.side-menu .collectables-counter {
-    text-align: center;
-}
-
-.side-menu .cycle-data {
-    text-align: center;
-    font-size: 17px;
-    padding-bottom: 3px;
-}
-
 .side-menu .menu-option {
     display: flex;
     align-items: start;
@@ -333,7 +385,9 @@ p {
 }
 
 .side-menu .menu-option:hover, .side-menu .menu-hidden .collectible-wrapper:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background-image: url(../images/menu_hover.png);
+    background-size: 100% 37px;
+    background-repeat: no-repeat;
 }
 
 .side-menu .disabled {
@@ -362,15 +416,19 @@ p {
     margin: auto 0;
 }
 
+.open-submenu.rotate {
+    transform: rotate(180deg);
+}
+
 .side-menu .menu-hidden {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 200ms ease-out;
+    transition: max-height 250ms ease-out;
 }
 
 .side-menu .menu-hidden.opened {
     max-height: 2000px;
-    transition: max-height 400ms ease-out;
+    transition: max-height 400ms linear;
 }
 
 .side-menu .menu-hidden .collection-value {
@@ -380,6 +438,10 @@ p {
     padding: 5px 0;
     display: flex;
     justify-content: space-around;
+}
+
+.side-menu .menu-hidden .collection-value a {
+    color: #fff;
 }
 
 .side-menu .menu-hidden .collection-sell {
@@ -440,6 +502,20 @@ p {
 
 .help-button a {
     color: #eee;
+}
+
+a.wiki-page {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.wiki-page:hover {
+    color: #fff;
+}
+
+a.wiki-page:visited {
+    color: #fff;
+    text-decoration: none;
 }
 
 .help-popup {
